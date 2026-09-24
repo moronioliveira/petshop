@@ -1,72 +1,166 @@
-.container{ 
-    max-width: 1280px;
-    width: 100%;
-    background-color: #fff;
-    margin: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-.titulo{
-    text-align: center;
-    color: #ffae00;
-    font-family: itelic;
-    font-weight: bold;
-    font-size: 50px;
+body {
+  margin: 0;
+  background-color: #fcfaf7;
+  font-family: 'Poppins', sans-serif;
 }
 
-.imagem{
-    max-width: 300px;
-    border-radius: 500px;
+.container { 
+  max-width: 1280px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.sessaoProdutos{
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+.headerTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 36px;
 }
 
-.imgBotao{
-    
-    max-width: 300px;
-    max-height: 300px;
+.titulo {
+  text-align: center;
+  color: #ffae00;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.preco{
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.titleIcon {
+  color: #ffae00;
+  font-size: 28px;
 }
 
-.botao{
-    border: none;
-     cursor: pointer;
-    border-radius: 50%;
-    background-color: #ffae00;
-    max-width: 80px;
-    max-height: 80px;
-    padding: 14px;
-    position: relative;
-    bottom: 76px;
-    left: 190px;
+.titleDecoration {
+  color: #f3c26b;
+  font-size: 20px;
+  transform: rotate(-15deg);
 }
 
-.quantia{
-    font-size: 25px;
-    
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 20px;
+.sessaoProdutos {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #f0e6d8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25 ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.tituloProduto{
-    text-align: center;
-    font-family: italic;
-    
+.sessaoProdutos:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(255, 174, 0, 0.18);
+  border-color: #ffd277;
+}
+
+.badgePet {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #fff8e7;
+  color: #ffae00;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+  border: 1px solid #ffe6b0;
+}
+
+.imgContainer {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.botao {
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #ffae00;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  box-shadow: 0 4px 10px rgba(255, 174, 0, 0.4);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 3;
+}
+
+.botao:hover {
+  background-color: #e09900;
+  transform: scale(1.1);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.tituloProduto {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444444;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 36px;
+}
+
+.precoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantia {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
 }

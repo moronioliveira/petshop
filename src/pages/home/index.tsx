@@ -5,10 +5,9 @@ import { api } from "../../services/api";
 import { CartContext } from "../../context/cartContext";
 import toast from "react-hot-toast";
 import { MdOutlinePets } from "react-icons/md";
-import { FaCat } from "react-icons/fa";
+import { FaCat, FaBone } from "react-icons/fa";
 
-
-export interface ProductsProps{
+export interface ProductsProps {
     id: number;
     title: string;
     description: string;
@@ -16,70 +15,82 @@ export interface ProductsProps{
     cover: string;
 }
 
-
-
-
 export function Home(){
-    const {addItemCart} = useContext(CartContext)
-     const [products, setProducts] = useState<ProductsProps[]>([])
+    const { addItemCart } = useContext(CartContext);
+    const [products, setProducts] = useState<ProductsProps[]>([]);
 
-     useEffect(()=>{
+    useEffect(() => {
         async function getProducts() {
-            const response = await api.get("/products")
-            setProducts(response.data)
+            const response = await api.get("/products");
+            setProducts(response.data);
         }
         getProducts();
-     },[])
+    }, []);
 
-     function handleAddCardItem(products: ProductsProps){
-        toast.success("Produto adicionado no carrinho", {
-            style:{
-                backgroundColor:" #ffae00",
-                borderRadius: 10,
-                color:" #fff",
-                padding: "30px 30px",
-                fontSize: 17,
-                border: "2px solid #fff",
+    function handleAddCardItem(product: ProductsProps) {
+        toast.success("Produto adicionado no carrinho 🐾", {
+            style: {
+                backgroundColor: "#ffae00",
+                borderRadius: "12px",
+                color: "#ffffff",
+                padding: "16px 24px",
+                fontSize: "15px",
+                fontWeight: "600",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
             }
-            
-        })
-        addItemCart(products)
-
-        
+        });
+        addItemCart(product);
     }
 
     return(
-        <div className={styles.container}>
-
-            <br /><h1 className={styles.titulo}><FaCat /> Produtos em Alta <FaCat /> </h1><br /><br />
+        <main className={styles.container}>
+            <div className={styles.headerTitleContainer}>
+                <FaBone className={styles.titleDecoration} />
+                <h1 className={styles.titulo}>
+                    <FaCat className={styles.titleIcon} /> 
+                    Produtos em Alta 
+                    <MdOutlinePets className={styles.titleIcon} />
+                </h1>
+                <FaBone className={styles.titleDecoration} />
+            </div>
             
             <div className={styles.grid}>
+                {products.map((product) => (
+                    <section key={product.id} className={styles.sessaoProdutos}>
+                        {/* Tag decorativa no card */}
+                        <div className={styles.badgePet}>
+                            <MdOutlinePets size={14} /> Pet
+                        </div>
 
-           {products.map((products)=>(
-            <section key={products.id} className={styles.sessaoProdutos}>
-            <div className={styles.imgBotao}>
-             <img
-            className={styles.imagem}
-             src={products.cover}
-             alt={products.title} />
-             <button 
-             onClick={()=> handleAddCardItem(products)}
-             className={styles.botao}>
-                <BsCartPlus size={27} color="#fefefe"/>
-                </button>
-            </div>
+                        <div className={styles.imgContainer}>
+                            <img
+                                className={styles.imagem}
+                                src={product.cover}
+                                alt={product.title} 
+                            />
+                            <button 
+                                onClick={() => handleAddCardItem(product)}
+                                className={styles.botao}
+                                title="Adicionar ao carrinho"
+                            >
+                                <BsCartPlus size={22} color="#ffffff"/>
+                            </button>
+                        </div>
 
-            <div className={styles.preco}>
-             <span className={styles.tituloProduto}>{products.title}</span>
-                    <strong className={styles.quantia}><span> {products.price.toLocaleString("pt-BR", {
-                        style: "currency",
-                        currency: "BRL"
-             })}</span></strong>
-            
-           </div>
-           </section>
-           ))}
+                        <div className={styles.infoContainer}>
+                            <span className={styles.tituloProduto}>{product.title}</span>
+                            <div className={styles.precoContainer}>
+                                <strong className={styles.quantia}>
+                                    {product.price.toLocaleString("pt-BR", {
+                                        style: "currency",
+                                        currency: "BRL"
+                                    })}
+                                </strong>
+                            </div>
+                        </div>
+                    </section>
+                ))}
             </div>
-        </div>
-    )
+        </main>
+    );
 }

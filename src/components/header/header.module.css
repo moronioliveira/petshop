@@ -1,42 +1,92 @@
-.header{
-    width: 100%;
-    height: 60px;
-    background-color: #ffae00;
-    }
-
-.nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 10px;
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #ffae00;
+  box-shadow: 0 4px 12px rgba(255, 174, 0, 0.25);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.title{
-    color: #fefefe;
-    font-size: 43px;
+.nav {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-.cart{
-    position: relative;
+.logoLink {
+  text-decoration: none;
 }
 
-.carrinho{
-    margin: 7px;
-    margin-right: 9px;
+.title {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.5px;
 }
 
-.contador{
-    position: absolute;
-    right: -2px;
-    top: -2px;
-    background-color: #fff;
-    border-radius: 50%;
-    max-width: 10px;
-    max-height: 10px;
-    padding: 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+.iconDog {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.iconPaws {
+  font-size: 24px;
+  color: #fff3c4;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cartLink:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+.carrinho {
+  margin: 0;
+}
+
+.contador {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #e63946;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ffae00;
 }
