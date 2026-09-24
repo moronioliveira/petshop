@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2a8dd990-b2f3-4862-a121-f8b61a090757" /> <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/9d740aa2-8a9d-4e26-8a37-b240e12f5d95" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+# 🐾 PetShop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+> Aplicação web reativa para consulta e exibição de dados de petshop, desenvolvida com React e estilização responsiva.
 
-## Expanding the ESLint configuration
+🌐 **Demo Online:** [Acessar PetShop](https://petshop-gamma-eight.vercel.app/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🎯 Sobre o Projeto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+O **PetShop** foi desenvolvido para oferecer uma interface simples e intuitiva ao usuário. A aplicação consome dados de uma **API externa** para carregar e exibir as informações em tempo real.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+O projeto foi construído utilizando **React** para a criação de componentes reativos e **CSS** focado em responsividade, garantindo uma navegação fluida em diferentes tamanhos de tela.
 
-```
+---
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tecnologias Utilizadas
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **[React](https://react.dev/):** Biblioteca para construção de interfaces reativas baseadas em componentes.
+- **CSS Responsivo:** Estilização adaptável para dispositivos móveis e desktops.
+- **API Externa:** Consumo de dados assíncronos para exibição das informações.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## ✨ Funcionalidades
+
+- **Consumo de API Externa:** Integração com serviço externo para obtenção dos dados.
+- **Design Responsivo:** Layout adaptável para smartphones, tablets e desktops.
+- **Interface Reativa:** Atualização dinâmica de componentes com React.
+
+---
+
+## 🚀 Como Executar o Projeto Localmente
+
+### Pré-requisitos
+- **Node.js** (versão 18 ou superior)
+- **npm** ou **yarn**
+
+### Passo a Passo
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/moronioliveira/petshop.git](https://github.com/moronioliveira/petshop.git)
