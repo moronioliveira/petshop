@@ -5,9 +5,24 @@ import { Link } from "react-router";
 import { FiShoppingBag, FiTrash2, FiMinus, FiPlus } from "react-icons/fi";
 import { MdOutlinePets } from "react-icons/md";
 import { FaBone } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 export function Cart() {
     const { cart, total, addItemCart, removeItemCart } = useContext(CartContext);
+
+    function alerta(){
+        toast.success("Produto comprado com sucesso", {
+            style: {
+                backgroundColor: "#ffae00",
+                borderRadius: "12px",
+                color: "#ffffff",
+                padding: "16px 24px",
+                fontSize: "15px",
+                fontWeight: "600",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
+            }
+        });
+    }
 
     return (
         <main className={styles.container}>
@@ -89,7 +104,9 @@ export function Cart() {
                             <strong className={styles.valorTotal}>{total}</strong>
                         </div>
 
-                        <button className={styles.btnFinalizar}>
+                        <button 
+                        onClick={()=> alerta()}
+                        className={styles.btnFinalizar}>
                             <FiShoppingBag size={20} /> Finalizar Compra
                         </button>
                     </div>
