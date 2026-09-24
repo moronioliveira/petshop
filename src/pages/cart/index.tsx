@@ -29,7 +29,7 @@ export function Cart() {
             <div className={styles.headerTitleContainer}>
                 <FaBone className={styles.titleDecoration} />
                 <h1 className={styles.titulo}>
-                    Meu Carrinho <MdOutlinePets className={styles.titleIcon} />
+                    Meu Carrinho
                 </h1>
                 <FaBone className={styles.titleDecoration} />
             </div>

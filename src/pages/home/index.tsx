@@ -57,7 +57,7 @@ export function Home(){
             <div className={styles.grid}>
                 {products.map((product) => (
                     <section key={product.id} className={styles.sessaoProdutos}>
-                        {/* Tag decorativa no card */}
+                       
                         <div className={styles.badgePet}>
                             <MdOutlinePets size={14} /> Pet
                         </div>
