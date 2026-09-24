@@ -1,0 +1,66 @@
+.container{
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.titulo{
+    text-align: center;
+    margin: 20px;
+    color: #fff;
+    font-family: italic;
+    font-size: 40px;
+    background-color: #ffae00;
+    border-radius: 8px;
+
+}
+
+.sessaoProdutos{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid;
+    border-color: #ffae00;
+    padding: 15px;
+}
+
+
+.imagem{
+    max-width: 122px;
+}
+
+.botao{
+    font-weight: bold;
+    font-size: 18px;
+}
+button {
+    margin: 8px;
+    background-color: #ffae00;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    
+    border-radius: 50%; 
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 12px; 
+    font-size: 18px;
+}
+
+.total{
+    margin: 15px;
+    font-size: 25px;
+    background-color: #ffae00;
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    padding: 8px;
+    border-radius: 8px;
+    color: #fff;
+    margin-left: auto;
+}
